@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Pong</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="myCanvas" width="800" height="450"></canvas>
+        <div id="side-bar">
+            <div class="bot-data">
+                <h2 id="iteration">Iteration: 1</h2>
+                <h2 id="fitness">Fitness: 0</h2>
+            </div>
+            <div class="inputs-container">
+                <input type="radio" id="mode1" name="mode1" value="mode1" onclick="selectMode('training')" checked>
+                <label for="mode1">Training</label>
+
+                <input type="radio" id="mode2" name="mode1" value="mode2" onclick="selectMode('player')">
+                <label for="mode2">Play vs Bot</label>
+                
+                <input type="radio" id="mode3" name="mode1" value="mode3" onclick="selectMode('bot')">
+                <label for="mode3">Bot vs Bot</label>
+            </div>
+            <div class="inputs-container">
+                <input type="checkbox" id="show-training" value="show-training" onclick="showTraining()" checked>
+                <label for="show-training">Show Training</label>
+            </div>
+            <div class="inputs-container">
+                <input type="radio" id="show-bot1" name="show-bot-group" value="show-bot1" onclick="selectShowBot('none')" checked disabled>
+                <label for="show-bot1">None</label>
+
+                <input type="radio" id="show-bot2" name="show-bot-group" value="show-bot2" onclick="selectShowBot('bot')" disabled>
+                <label for="show-bot2">Show Best Bot</label>
+                
+                <input type="radio" id="show-bot3" name="show-bot-group" value="show-bot3" onclick="selectShowBot('group')" disabled>
+                <label for="show-bot3">Show Best Group</label>
+            </div>
+            <div class="inputs-container">
+                <label for="fitness-limit">Fitness Limit</label>
+                <input type="number" id="fitness-limit" name="fitness-limit-group" value="0" min="0">
+                <input type="button" id="fitness-limit-button" name="fitness-limit-group" value="Set" onclick="setFitness()">
+            </div>
+            <div class="inputs-container">
+                <h2 class="heading">Bot Amount:</h2>
+                <input type="radio" id="preset1" name="presets" value="preset1" onclick="setPreset('preset1')" checked>
+                <label for="preset1">10</label>
+
+                <input type="radio" id="preset2" name="presets" value="preset2" onclick="setPreset('preset2')">
+                <label for="preset2">100</label>
+               
+                <input type="radio" id="preset3" name="presets" value="preset3" onclick="setPreset('preset3')">
+                <label for="preset3">1000</label>
+
+                <input type="radio" id="preset4" name="presets" value="preset4" onclick="setPreset('preset4')">
+                <label for="preset4">5000</label>
+            </div>
+            <div class="inputs-container">
+                <h2 class="heading">Ball Settings:</h2>
+                <input type="checkbox" id="acceleration" value="acceleration" onclick="toggleAcceleration()">
+                <label for="acceleration">Acceleration</label>
+            </div>
+        </div>
+    </div>
+    <script src="./bots.js"></script>
+    <script src="./UI.js"></script>
+    <script src="./eventListeners.js"></script>
+    <script src="./neuralnetwork.js"></script>
+    <script src="./paddle.js"></script>
+    <script src="./ball.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

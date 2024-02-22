@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to bottom, #e6e6e6, #616161);
+    min-height: 100vh;
+    min-width: 900px;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+
+input {
+    font-family: 'Poppins', sans-serif;
+}
+
+input[type="radio" i], input[type="checkbox" i] {
+    margin-left: 0;
+}
+
+.container {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#side-bar {
+    background: rgba(119, 147, 173, 0.4);
+    padding: 0.8rem;
+}
+
+@media (max-width: 1350px) {
+    #side-bar {
+        width: 800px;
+    }
+}
+
+.bot-data {
+    display: flex;
+}
+
+.bot-data > * {
+    margin: 0 0 0.75rem 0;
+}
+
+.bot-data > :not(:first-child) {
+    margin-left: 1.5rem;
+}
+
+.inputs-container {
+    margin-bottom: 0.3rem; 
+}
+
+#fitness-limit {
+    width: 4.5rem;
+}
+
+.heading {
+    margin: 0.75rem 0;
+}
