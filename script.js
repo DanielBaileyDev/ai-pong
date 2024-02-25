@@ -25,10 +25,10 @@ let trainAI = true;
 let isPlayerPlaying = false;
 let botVersusBot = false;
 
-let visualTraining = true;
+let visualTraining = false;
 
 let showBest = false;
-let showBestGroup = false;
+let showBestGroup = true;
 
 let ballAcceleration = false;
 
@@ -44,7 +44,7 @@ let input = new InputLayer(3);
 let output = new HOLayer(1, "tanh");
 let network = new NeuralNetwork([input, output]);
 
-let info = new NeuralNetworksInfo(3, 2, 1, 4, 0.1, network);
+let info = new NeuralNetworksInfo(5, 50, 1, 750, 0.1, network);
 
 let botPaddles;
 let balls;
